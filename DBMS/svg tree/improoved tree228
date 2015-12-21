@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+    <svg id="picture" height="1400" width="1400">
+    </svg>
+
+    <script>
+	
+        var DrawTree = function () {
+			var k = 0;
+            var Tree = document.getElementById("picture");
+			
+			for(var i = 0; i < arguments.length-1;i++){
+				var Vetka = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+				Vetka.setAttribute("points", arguments[i]);
+				Vetka.style.fill = "green";
+				Vetka.style.stroke = "yellow";
+				Tree.appendChild(Vetka);
+				k = i + 1;
+			}
+			
+			var stolb = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+            stolb.setAttribute("points", arguments[k]);
+            stolb.style.fill = "brown";
+            Tree.appendChild(stolb);
+        }
+
+        window.onload = new DrawTree("180,0 200,30 160,30", "180,30 210,60 150,60", "180,60 220,90 140,90", "180,90 230,120 130,120", "175,130 185,130 185,120 175,120");
+
+        window.onload = new DrawTree("280,0 300,30 260,30", "280,30 310,60 250,60", "280,60 320,90 240,90", "280,90 330,120 230,120", "275,130 285,130 285,120 275,120");
+
+    </script>
+
+</body>
+</html>
