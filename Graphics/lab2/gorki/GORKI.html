@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta charset = "utf-8">
+<html>
+	<head>
+		<title>Американ маунтаинс</title>
+		<style>
+			* {
+				margin: 0px;
+			}
+			#paravoz {
+				position: absolute;
+				transform-origin:0% 0%;
+				width: 40px;
+				height: 40px;
+			}
+		</style>
+		<script>
+			
+			function f()
+			{
+				var context = document.getElementById('canvas').getContext('2d');
+				
+				
+				context.strokeStyle = 'black';
+				var n = 1000;
+				var xs = []; var ys = [];
+				for (var i = 0;i<n;i++){
+					xs[i] = i;
+					if (i == 0) ys[i] = 200;
+					else if (i<100) ys[i] = ys[i-1]+0.2;
+					else if (i<500) ys[i] = ys[i-3]-0.5;
+					else ys[i] = ys[i-1]+1.5;
+				}
+				context.moveTo(xs[0],ys[0]);
+				for (var i = 1;i<n;i++)
+					context.lineTo(xs[i],ys[i]);
+				context.stroke();
+				
+				var paravoz = document.getElementById("paravoz");
+				var index = 0;
+				var v = 1;
+				var a = 1;
+				var timer = setInterval(function(){
+					paravoz.style.top = (ys[index]-40)+'px';
+					paravoz.style.left = (xs[index])+'px';
+					if (ys[index+1]-ys[index]>0)	a = 2; else a = -20;//вниз или вверх? а - ускорение/замедление
+					v += a;//v - скорасть
+					if (v<1) v = 1;
+					index += v;
+					if (index == n) 
+						clearInterval(timer);
+				},10);
+			}
+		</script>
+	</head>
+	<body onload="f()" bgcolor="#black" style = "background:url(http://www.walland.ru/thumbs/1270086840.jpg) ;background-size:cover;">
+		<canvas id="canvas" width="1000" height="700">
+		</canvas>
+		<img id="paravoz" src="Вагонетка_(Предмет).png">
+	</body>
+</html>

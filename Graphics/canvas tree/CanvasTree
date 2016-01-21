@@ -11,7 +11,7 @@ Your browser does not support the canvas element.
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "green";
+ctx.fillStyle = "yellow";
 {
 ctx.moveTo(70,5);
 ctx.lineTo(30,40);

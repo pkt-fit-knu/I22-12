@@ -28,30 +28,27 @@
 
                 for (j = 0; j < 1100; j += 220 + randomInteger(-70, 200)) {
 
-                    ctx.moveTo(70 + i, 5 + j);
-                    ctx.lineTo(30 + i, 40 + j);
-                    ctx.lineTo(110 + i, 40 + j);
+                    ctx.moveTo(35 + i, 4 + j);
+                    ctx.lineTo(15 + i, 23 + j);
+                    ctx.lineTo(55 + i, 25 + j);
                     ctx.fill();
 
-                    ctx.moveTo(70 + i, 25 + j);
-                    ctx.lineTo(20 + i, 70 + j);
-                    ctx.lineTo(120 + i, 70 + j);
+                    ctx.moveTo(35 + i, 15 + j);
+                    ctx.lineTo(10 + i, 38 + j);
+                    ctx.lineTo(60 + i, 34 + j);
                     ctx.fill();
 
-                    ctx.moveTo(70 + i, 45 + j);
-                    ctx.lineTo(10 + i, 105 + j);
-                    ctx.lineTo(130 + i, 105 + j);
+                    ctx.moveTo(35 + i, 25 + j);
+                    ctx.lineTo(5 + i, 60 + j);
+                    ctx.lineTo(65 + i, 59 + j);
                     ctx.fill();
 
-                    ctx.moveTo(70 + i, 65 + j);
-                    ctx.lineTo(0 + i, 145 + j);
-                    ctx.lineTo(140 + i, 145 + j);
+                    ctx.moveTo(35 + i, 35 + j);
+                    ctx.lineTo(0 + i, 70 + j);
+                    ctx.lineTo(70 + i, 75 + j);
                     ctx.fill();
 
-                    ctx.fillRect(60 + i, 145 + j, 18, 20);
-
-
-
+                    ctx.fillRect(30 + i, 72 + j, 9, 10);
                 }
 
             }
